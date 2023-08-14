@@ -1,13 +1,28 @@
 body{ 
     margin: 0;
-    padding: 0; 
+    padding: 0;
+
 }
 #board{
-    background-color: #0000ff;
+    background: url('../Resources/Background.jpg');
     height: 100vh;
+    width: 100vw;
     position: relative;
+    
+    
     
 }
 #Player-Spaceship{ 
     position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+.enemySpaceShip{ 
+    max-width: 10vw;
+    max-height: 10vh;
+    position: absolute;
+}
+
+
+
+ 
