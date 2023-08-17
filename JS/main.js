@@ -6,7 +6,8 @@ class Player {
     this.positionY = 0;
     this.playerSpaceShip = null;
 
-    this.createDomElement();
+    this.createDomElement()
+    ;
   }
 
   createDomElement() {
@@ -47,6 +48,7 @@ class Player {
       this.playerSpaceShip.style.bottom = this.positionY + "vh";
     }
   }
+  
   shoot() {
     const projectile = new PlayerProjectiles();
     projectileArr.push(projectile);
@@ -84,8 +86,8 @@ class PlayerProjectiles {
 
 class Enemy {
   constructor() {
-    this.width = 8;
-    this.height = 5;
+    this.width = 6;
+    this.height = 4;
     this.positionX = Math.floor(Math.random() * (100 - this.width + 1));
     this.positionY = 100;
     this.domElement = null;
@@ -139,10 +141,15 @@ class Score {
     this.scoreElement.textContent = "Score: " + this.points;
   }
 }
+
 const playerScore = new Score();
 const player = new Player();
 const projectileArr = [];
 const EnemyArr = [];
+
+let enemySpawnRate = 6000; 
+let currentSpawnRate = enemySpawnRate;
+
 setInterval(() => {
   projectileArr.forEach(function (projectile, ind) {
     projectile.moveUp();
@@ -171,7 +178,7 @@ setInterval(() => {
 setInterval(() => {
   const newEnemy = new Enemy();
   EnemyArr.push(newEnemy);
-}, 6000);
+}, 1000);
 
 setInterval(() => {
   EnemyArr.forEach(function (enemy) {

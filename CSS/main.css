@@ -26,7 +26,8 @@ body {
 .enemySpaceShip {
     position: absolute;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: contain;
+  
 
 }
 
@@ -34,6 +35,7 @@ body {
     position: absolute;
     background-image: url(../Resources/projectile.png) ;
     background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .GameOver {
@@ -51,7 +53,6 @@ body {
     background-image: url('../Resources/game-over.png');
     background-repeat: no-repeat;
     background-size: contain;
-    
     width: 40vw;
     height: 20vh;
     align-self: center;
@@ -64,5 +65,23 @@ body {
     position: absolute;
     color: white;
     font-size: 25px;
-    
+
 }
+ .welcome-body {     
+    background-image: url(../Resources/Background.jpg);
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+ }
+.welcome-body div{
+    align-self: center;
+    color: white;
+    text-align: center;
+}
+.welcome-body div p { 
+    font-size: medium;
+}
+
