@@ -6,8 +6,7 @@ class Player {
     this.positionY = 0;
     this.playerSpaceShip = null;
 
-    this.createDomElement()
-    ;
+    this.createDomElement();
   }
 
   createDomElement() {
@@ -48,7 +47,7 @@ class Player {
       this.playerSpaceShip.style.bottom = this.positionY + "vh";
     }
   }
-  
+
   shoot() {
     const projectile = new PlayerProjectiles();
     projectileArr.push(projectile);
@@ -73,7 +72,6 @@ class PlayerProjectiles {
     this.projectileElement.style.height = this.height + "vh";
     this.projectileElement.style.left = this.positionX + "vw";
     this.projectileElement.style.bottom = this.positionY + "vh";
-    
 
     const parentElm = document.getElementById("board");
     parentElm.appendChild(this.projectileElement);
@@ -146,10 +144,11 @@ const playerScore = new Score();
 const player = new Player();
 const projectileArr = [];
 const EnemyArr = [];
-
-let enemySpawnRate = 6000; 
-let currentSpawnRate = enemySpawnRate;
-
+setInterval(() => {
+  if (playerScore.points < 0) {
+    location.href = "./GameOver.html";
+  }
+}, 10);
 setInterval(() => {
   projectileArr.forEach(function (projectile, ind) {
     projectile.moveUp();
@@ -174,11 +173,10 @@ setInterval(() => {
   });
 }, 1);
 
-
 setInterval(() => {
   const newEnemy = new Enemy();
   EnemyArr.push(newEnemy);
-}, 1000);
+}, 700);
 
 setInterval(() => {
   EnemyArr.forEach(function (enemy) {
@@ -187,8 +185,8 @@ setInterval(() => {
     if (enemy.positionY < 0 - enemy.height) {
       enemy.enemySpaceShip.remove();
       EnemyArr.shift();
+      playerScore.updateScore(-10);
     }
-
     if (
       player.positionX < enemy.positionX + enemy.width &&
       player.positionX + player.width > enemy.positionX &&
@@ -198,7 +196,6 @@ setInterval(() => {
       location.href = "./GameOver.html";
     }
   });
-
 }, 10);
 
 document.addEventListener("keydown", (e) => {
@@ -212,5 +209,8 @@ document.addEventListener("keydown", (e) => {
     player.moveUp();
   } else if (e.key === " ") {
     player.shoot();
+    const laserSound = document.getElementById("laser");
+    laserSound.play();
+    3;
   }
 });

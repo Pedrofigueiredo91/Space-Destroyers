@@ -1,87 +1,88 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 #board {
-    background: url(../Resources/Background.jpg);
-    height: 100vh;
-    width: 100vw;
-    position: relative;
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
-
+  background: url(../Resources/Background.jpg);
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
 }
 
 #Player-Spaceship {
-    position: absolute;
-    background-repeat: no-repeat;
-    background-size: fill;
-
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: fill;
 }
 
 .enemySpaceShip {
-    position: absolute;
-    background-repeat: no-repeat;
-    background-size: contain;
-  
-
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .player-projectiles {
-    position: absolute;
-    background-image: url(../Resources/projectile.png) ;
-    background-size: contain;
-    background-repeat: no-repeat;
+  position: absolute;
+  background-image: url(../Resources/projectile.png);
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .GameOver {
-    background-image: url(../Resources/Background.jpg);
-    height: 100vh;
-    width: 100vw;
-    position: relative;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  background-image: url(../Resources/Background.jpg);
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .GameOver h1 {
-    background-image: url('../Resources/game-over.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 40vw;
-    height: 20vh;
-    align-self: center;
+  background-image: url("../Resources/game-over.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 40vw;
+  height: 20vh;
+  align-self: center;
 }
-.GameOver h2 { 
-    color: white;
-    align-self: center;
+.GameOver h2 {
+  color: white;
+  align-self: center;
 }
-.player-score{
-    position: absolute;
-    color: white;
-    font-size: 25px;
-
+.player-score {
+  position: absolute;
+  color: white;
+  font-size: 25px;
 }
- .welcome-body {     
-    background-image: url(../Resources/Background.jpg);
-    height: 100vh;
-    width: 100vw;
-    position: relative;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
- }
-.welcome-body div{
-    align-self: center;
-    color: white;
-    text-align: center;
+.welcome-body {
+  background-image: url(../Resources/Background.jpg);
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
 }
-.welcome-body div p { 
-    font-size: medium;
+.welcome-body div {
+  align-self: center;
+  color: white;
+  text-align: center;
 }
-
+.welcome-body div p {
+  font-size: medium;
+}
+.timer {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: white;
+}
