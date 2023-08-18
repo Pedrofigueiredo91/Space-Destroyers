@@ -211,6 +211,7 @@ document.addEventListener("keydown", (e) => {
     player.shoot();
     const laserSound = document.getElementById("laser");
     laserSound.play();
-    3;
+    laserSound.volume = 0.1;
+  
   }
 });
